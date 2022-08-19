@@ -1,0 +1,20 @@
+{
+  "name": "med-assistant",
+  "version": "0.1.0",
+  "private": true,
+  
+    "scripts": {
+        "frontend-install"  : "cd frontend && yarn install",
+        "backend-install"  : "cd backend && yarn install",
+        "install-all-deps": "concurrently \"yarn run backend-install\" \"yarn run frontend-install\"",
+        "dev-frontend"    : "cd frontend && yarn run dev",
+        "start-backend"    : "node backend/index.js",
+        "start-dev": "concurrently \"yarn run dev-frontend\" \"yarn run start-backend\"",
+        "frontend-build"    : "cd frontend && yarn run build",
+        "start": "concurrently \"yarn run start-client\" \"yarn run start-backend\""
+    },
+
+  "dependencies": {
+    "concurrently": "^7.3.0"
+  }
+}

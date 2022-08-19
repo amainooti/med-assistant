@@ -1,5 +1,6 @@
 
-
+// controller for users data
+// @method: GET,
 const getUser = (req, res)=>{
     res.status(200).json({
         message: "Fetching user data..."

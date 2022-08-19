@@ -2,13 +2,17 @@
   "name": "med-assistant",
   "version": "0.1.0",
   "private": true,
+  "author": "ALPHA DEVS",
+  "description": "Med Assistant",
+  "license": "MIT",
   
+
     "scripts": {
         "frontend-install"  : "cd frontend && yarn install",
         "backend-install"  : "cd backend && yarn install",
         "install-all-deps": "concurrently \"yarn run backend-install\" \"yarn run frontend-install\"",
         "dev-frontend"    : "cd frontend && yarn run dev",
-        "start-backend"    : "node backend/index.js",
+        "start-backend"    : "cd backend && yarn run start",
         "start-dev": "concurrently \"yarn run dev-frontend\" \"yarn run start-backend\"",
         "frontend-build"    : "cd frontend && yarn run build",
         "start": "concurrently \"yarn run start-client\" \"yarn run start-backend\""

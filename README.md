@@ -18,7 +18,8 @@ Med-X is an open source medical web app that allows users to connect to their at
 .b Notifications for patients that have recurring check ups and appointments. 
 .c Both should be able to sync with the calendar.
 
-Technologies used will be updated along the course of th
+Technologies used will be updated along the course of the project.
+
 
 
 # Web Panel

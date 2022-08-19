@@ -1,8 +1,8 @@
-# Medical Assistant Webpage
+# Medical Assistant Web-app
 
 **Disclaimer**: This Project should be used
 
-Medical Assistant is an open source medical blah blah blah. It includes features such as:
+Medical Assistant is an open source medical web app that allows users to connect to medical practitioners and it also helps keep track of user data in a secured and private way. It includes features such as:
 
 - One
 - Two

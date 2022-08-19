@@ -20,6 +20,7 @@ app.use(express.json())
 app.use("/api/userData", require("./routes/userRoute"))
 // app.use("/api/userDashboard", require("./routes/userDashBoard"))
 
+
 app.listen(PORT, () => {
-  console.log(colors.blue(`Listening on port http://localhost:${PORT}`));
+  console.log(colors.bold(`Listening on port http://localhost:${PORT}`));
 });

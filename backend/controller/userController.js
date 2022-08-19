@@ -1,16 +1,20 @@
-
+const User = require("../models/userModel")
 // controller for users data
 
 // @method: GET
-const getUser = (req, res)=>{
-    res.status(200).json({
-        message: "Fetching user data..."
-    })
+const getUser = async (req, res)=>{
+    const user = await User.find()
+    res.status(200).json(user)
 }
-const setUser = (req, res)=>{
-    res.status(200).json({
-        message: "Setting user data..."
-    })
+const setUser = async (req, res)=>{
+
+    // const user = await User.create({
+    //     name: req.body.name,
+    //     email: req.body.email,
+    //     password: req.body.password,
+    //     telephone: req.body.telephone
+    // })
+    res.status(200).json({message: "Testing user"})
 }
 const updateUser = (req, res)=>{
     res.status(200).json({

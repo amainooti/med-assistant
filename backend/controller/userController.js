@@ -1,6 +1,7 @@
 
 // controller for users data
-// @method: GET,
+
+// @method: GET
 const getUser = (req, res)=>{
     res.status(200).json({
         message: "Fetching user data..."
@@ -13,12 +14,12 @@ const setUser = (req, res)=>{
 }
 const updateUser = (req, res)=>{
     res.status(200).json({
-        message: "Updating user data..."
+        message: `Updating user data ${req.params.id}`
     })
 }
 const deleteUser = (req, res)=>{
     res.status(200).json({
-        message: "Deleting user data..."
+        message: `Deleting user data ${req.params.id}`
     })
 }
 

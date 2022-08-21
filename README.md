@@ -15,6 +15,11 @@ Med-X is an open source medical web app that allows users to connect to their at
 - E-Calendar
 
 
+## License
+
+[MIT](/LICENSE)
+
+
 ## Demo
 
 Insert gif or link to demo

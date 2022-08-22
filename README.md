@@ -2,23 +2,93 @@
 
 **Disclaimer**: This Project should be used
 
-Med-X is an open source medical web app that allows users to connect to their attending personel, manage their data, keep up with their medications & check ups, and if need be manage their patient scheduling. It's features will include:
+Med-X is an open source medical web app that allows users to connect to their attending personel, manage their data, keep up with their medications & check ups, and if need be manage their patient scheduling.
+## Features
 
-+1a A database for patients to access their medical records.(should be allowed to search through files)
-.b The database aforementioned should also be accessible to the patients attending and consulting personnel.(the staff)
-.c Secure log ins on both ends when accessing the files.
-.d Databses of all medical personell and their field of specialization which states their availability and
-   working hours or shifts.(should be per hospital can be accessible to everyone)
-.e Databases of hospitals in a town,city,and country.
+- Patients can acess their medical records.
+- Records are accessible to consulting personnel (Doctors, etc)
+- Provides information on the availability of registered medical personnel and their respective specialisation and hospitals
+- Provides information on Hospitals readily available in close proximity.
+- Appointment Bookings by patients.
+- Employee shift management
+- Notifies patients on their next appointment and Medication
+- E-Calendar
 
-+2a Appointment booking by the patients.
-.b Shift managers (medical staff) should be able to assign and accept appointments and manage the patient scheduling.
 
-+3a Notifications for patients currently on medications.
-.b Notifications for patients that have recurring check ups and appointments. 
-.c Both should be able to sync with the calendar.
+## License
 
-Technologies used will be updated along the course of th
+[MIT](https://choosealicense.com/licenses/mit/)
+
+
+## Demo
+
+Insert gif or link to demo
+
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/amainooti/med-assistant
+```
+
+Go to the project directory
+
+```bash
+  cd med-assistant
+```
+
+Install dependencies
+
+```bash
+  yarn run install-all-deps
+```
+
+Build the UI
+
+```bash
+  yarn run frontend-build
+```
+
+Start the App
+
+```bash
+  yarn run start
+```
+
+
+## Tech Stack
+
+**Client:** React, NextJS, Material UI, Framer Motion, SyncFusion, Axios, Formik
+
+**Server:** Node, Express, Google Calendar API, MongoDB
+
+
+## Optimizations
+
+What optimizations did you make in your code? E.g. refactors, performance improvements, accessibility
+
+
+## Roadmap
+
+- Additional browser support
+
+- Add more integrations
+
+- Make App
+
+
+## Authors
+
+- [@Amaino](https://www.github.com/amainooti)
+- [@Dhanzy](https://www.github.com/dhanzy)
+- [@Ashley](https://www.github.com/olika-ashley)
+- [@Kachi](https://www.github.com/okilonet1)
+
+
+
+## Support
 
 For support, email fake@fake.com or join our Slack channel.
 

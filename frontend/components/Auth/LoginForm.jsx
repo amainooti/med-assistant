@@ -1,5 +1,7 @@
 import React from "react";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
+import { FcGoogle } from "react-icons/fc";
+import { BsFacebook, BsApple } from "react-icons/bs";
 
 import {
   Paper,
@@ -33,7 +35,7 @@ import { useRouter } from "next/router";
 import { Formik } from "formik";
 import * as Yup from "yup";
 
-export const LoginForm = ({ setMobileOpen }) => {
+const LoginForm = ({ setMobileOpen }) => {
   const [errorMessage, setErrorMessage] = React.useState();
   const router = useRouter();
 
@@ -131,27 +133,31 @@ export const LoginForm = ({ setMobileOpen }) => {
 
         <Divider sx={{ my: 3 }}>or continue with</Divider>
 
-        <Stack direction="row" sx={{ justifyContent: "center" }} gap="1rem">
+        <Stack
+          direction="row"
+          sx={{ justifyContent: "center", height: "2.5rem" }}
+          gap="1rem"
+        >
           <Button
             variant="outlined"
             color="primary"
             sx={{ textTransform: "none" }}
           >
-            F
+            <BsFacebook />
           </Button>
           <Button
             variant="outlined"
             color="primary"
             sx={{ textTransform: "none" }}
           >
-            G
+            <FcGoogle />
           </Button>
           <Button
             variant="outlined"
             color="primary"
             sx={{ textTransform: "none" }}
           >
-            A
+            <BsApple />
           </Button>
         </Stack>
         <Typography
@@ -164,7 +170,7 @@ export const LoginForm = ({ setMobileOpen }) => {
             fontFamily: "'Josefin Sans', sans-serif",
           }}
         >
-          <Link href="#">
+          <Link href="/register">
             <a>Don't have an account?</a>
           </Link>
         </Typography>
@@ -187,3 +193,5 @@ export const LoginForm = ({ setMobileOpen }) => {
     </>
   );
 };
+
+export default LoginForm;

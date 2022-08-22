@@ -14,6 +14,7 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import LockTwoToneIcon from "@mui/icons-material/LockTwoTone";
 import EmailTwoToneIcon from "@mui/icons-material/EmailTwoTone";
+import Link from "next/link";
 
 export const Input = (props) => {
   return (

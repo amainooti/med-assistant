@@ -18,12 +18,10 @@ Med-X is an open source medical web app that allows users to connect to their at
 .b Notifications for patients that have recurring check ups and appointments. 
 .c Both should be able to sync with the calendar.
 
-Technologies used will be updated along the course of the project.
+Technologies used will be updated along the course of th
+
+For support, email fake@fake.com or join our Slack channel.
 
 
+![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
 
-# Web Panel
-
-## Dashboard
-
-A dashboard for medical practitioner and patients blah blah

@@ -118,6 +118,7 @@ const LoginForm = ({ setMobileOpen }) => {
         </Formik>
         <Typography
           variant="h6"
+          color="primary"
           sx={{
             textAlign: "center",
             fontWeight: "bold",
@@ -131,8 +132,14 @@ const LoginForm = ({ setMobileOpen }) => {
           </Link>
         </Typography>
 
-        <Divider sx={{ my: 3 }}>or continue with</Divider>
-
+        <Divider
+          sx={{
+            my: 3,
+            color: "#7D879C",
+          }}
+        >
+          or continue with
+        </Divider>
         <Stack
           direction="row"
           sx={{ justifyContent: "center", height: "2.5rem" }}
@@ -162,6 +169,7 @@ const LoginForm = ({ setMobileOpen }) => {
         </Stack>
         <Typography
           variant="h6"
+          color="primary"
           sx={{
             textAlign: "center",
             fontWeight: "bold",
@@ -170,8 +178,16 @@ const LoginForm = ({ setMobileOpen }) => {
             fontFamily: "'Josefin Sans', sans-serif",
           }}
         >
+          <span
+            style={{
+              color: "#7D879C",
+            }}
+          >
+            Don't have an account?{" "}
+          </span>
+
           <Link href="/register">
-            <a>Don't have an account?</a>
+            <a>Sign Up</a>
           </Link>
         </Typography>
       </Paper>

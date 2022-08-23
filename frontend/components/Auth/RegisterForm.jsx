@@ -2,6 +2,7 @@ import React from "react";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook, BsApple } from "react-icons/bs";
+import { useRouter } from "next/router";
 
 import {
   Paper,
@@ -28,14 +29,15 @@ import {
   Password,
   CustomButton,
   SecondaryButton,
+  BackButton,
 } from "../Common/Custom";
 
 import Link from "next/link";
 import Image from "next/image";
 
-import { useRouter } from "next/router";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import WestRoundedIcon from "@mui/icons-material/WestRounded";
 
 const RegisterForm = ({ setMobileOpen }) => {
   const [errorMessage, setErrorMessage] = React.useState();
@@ -52,7 +54,19 @@ const RegisterForm = ({ setMobileOpen }) => {
           // backgroundColor: "#000",
         }}
       >
-        <Image src="/assets/medcross.png" alt="" width="128" height="127" />
+        <IconButton
+          aria-label="Go Back"
+          size="large"
+          onClick={() => router.back()}
+          sx={{
+            top: "-125px",
+            left: "-150px",
+          }}
+        >
+          <WestRoundedIcon />
+        </IconButton>
+
+        <Image src="/assets/seth.png" alt="" width="128" height="127" />
 
         <Formik
           initialValues={{

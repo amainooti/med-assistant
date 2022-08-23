@@ -11,24 +11,15 @@ import {
   Divider,
   Checkbox,
   useTheme,
-  FormControlLabel,
-  FormHelperText,
   CircularProgress,
   Snackbar,
-  IconButton,
-  InputAdornment,
-  FilledInput,
   Button,
   Box,
+  IconButton,
 } from "@mui/material";
+import WestRoundedIcon from "@mui/icons-material/WestRounded";
 
-import {
-  Email,
-  Input,
-  Password,
-  CustomButton,
-  SecondaryButton,
-} from "../Common/Custom";
+import { Email, Password, CustomButton } from "../Common/Custom";
 
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -51,6 +42,17 @@ const LoginForm = ({ setMobileOpen }) => {
           // backgroundColor: "#000",
         }}
       >
+        <IconButton
+          aria-label="Go Back"
+          size="large"
+          onClick={() => router.back()}
+          sx={{
+            top: "-170px",
+            left: "-90px",
+          }}
+        >
+          <WestRoundedIcon />
+        </IconButton>
         <Image src="/assets/med.png" alt="" width="256" height="171" />
 
         <Formik
@@ -113,9 +115,6 @@ const LoginForm = ({ setMobileOpen }) => {
               >
                 {isSubmitting ? <CircularProgress /> : "Sign in"}
               </CustomButton>
-              {/* <SecondaryButton fullWidth="true" variant="contained">
-                Sign In
-              </SecondaryButton> */}
             </form>
           )}
         </Formik>

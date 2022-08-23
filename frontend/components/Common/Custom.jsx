@@ -21,7 +21,7 @@ export const Input = (props) => {
     <OutlinedInput
       id="password-field"
       fullWidth
-      type="text"
+      type="string"
       value={props.value}
       size={props.size}
       placeholder={props.placeholder}
@@ -72,15 +72,7 @@ export const Password = (props) => {
       }}
       startAdornment={
         <InputAdornment position="start">
-          <IconButton
-            aria-label="toggle password visibility"
-            onClick={handleClickShowPassword}
-            onMouseDown={handleMouseDownPassword}
-            edge="start"
-            size="small"
-          >
-            <LockTwoToneIcon />
-          </IconButton>
+          <LockTwoToneIcon />
         </InputAdornment>
       }
       endAdornment={
@@ -111,13 +103,7 @@ export const Email = (props) => {
       }}
       startAdornment={
         <InputAdornment position="start">
-          <IconButton
-            aria-label="toggle password visibility"
-            edge="start"
-            size="small"
-          >
-            <EmailTwoToneIcon />
-          </IconButton>
+          <EmailTwoToneIcon />
         </InputAdornment>
       }
     />

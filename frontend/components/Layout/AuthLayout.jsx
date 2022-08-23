@@ -8,10 +8,15 @@ const Main = styled(Box)(() => ({
   minHeight: "100vh",
   justifyContent: "center",
   alignItems: "center",
+  textAlign: "center",
 }));
 
 const AuthLayout = ({ children }) => {
-  return <Main>{children}</Main>;
+  return (
+    <>
+      <Main>{children}</Main>
+    </>
+  );
 };
 
 export default AuthLayout;

@@ -34,6 +34,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import Image from "next/image";
 
 const LoginForm = ({ setMobileOpen }) => {
   const [errorMessage, setErrorMessage] = React.useState();
@@ -50,6 +51,8 @@ const LoginForm = ({ setMobileOpen }) => {
           // backgroundColor: "#000",
         }}
       >
+        <Image src="/assets/med.png" alt="" width="256" height="171" />
+
         <Formik
           initialValues={{
             email: "",
@@ -131,7 +134,6 @@ const LoginForm = ({ setMobileOpen }) => {
             <a>Forgot Password?</a>
           </Link>
         </Typography>
-
         <Divider
           sx={{
             my: 3,

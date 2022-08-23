@@ -7,21 +7,31 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
 import InputAdornment from "@mui/material/InputAdornment";
 import FormHelperText from "@mui/material/FormHelperText";
-import FormControl from "@mui/material/FormControl";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import LockTwoToneIcon from "@mui/icons-material/LockTwoTone";
 import EmailTwoToneIcon from "@mui/icons-material/EmailTwoTone";
+
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export const Input = (props) => {
+  const [value, setValue] = React.useState("");
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
+
   return (
     <OutlinedInput
-      id="password-field"
+      id={props.placeholder}
       fullWidth
       type="text"
+      onChange={handleChange}
       value={props.value}
       size={props.size}
       placeholder={props.placeholder}
@@ -57,7 +67,7 @@ export const Password = (props) => {
   };
   return (
     <OutlinedInput
-      id="password-field"
+      id={props.placeholder}
       fullWidth
       type={values.showPassword ? "text" : "password"}
       value={props.value}
@@ -72,15 +82,7 @@ export const Password = (props) => {
       }}
       startAdornment={
         <InputAdornment position="start">
-          <IconButton
-            aria-label="toggle password visibility"
-            onClick={handleClickShowPassword}
-            onMouseDown={handleMouseDownPassword}
-            edge="start"
-            size="small"
-          >
-            <LockTwoToneIcon />
-          </IconButton>
+          <LockTwoToneIcon />
         </InputAdornment>
       }
       endAdornment={
@@ -95,11 +97,17 @@ export const Password = (props) => {
 };
 
 export const Email = (props) => {
+  const [value, setValue] = React.useState("");
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
+
   return (
     <OutlinedInput
-      id="password-field"
+      id={props.placeholder}
       fullWidth
       type="email"
+      onChange={handleChange}
       value={props.value}
       size={props.size}
       placeholder={props.placeholder}
@@ -111,49 +119,56 @@ export const Email = (props) => {
       }}
       startAdornment={
         <InputAdornment position="start">
-          <IconButton
-            aria-label="toggle password visibility"
-            edge="start"
-            size="small"
-          >
-            <EmailTwoToneIcon />
-          </IconButton>
+          <EmailTwoToneIcon />
         </InputAdornment>
       }
     />
   );
 };
 
-export const Date = (props) => {
+export const CustomSelect = (props) => {
+  const [value, setValue] = React.useState("");
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
   return (
-    <div>
-      <input
-        type="text"
+    <FormControl fullWidth={props.fullWidth}>
+      <Select
+        labelId={"select-" + props.label}
+        id={"select-" + props.label}
         value={props.value}
-        onChange={(event) => console.log("value changed!")}
-      />
-    </div>
+        onChange={handleChange}
+        size={props.size}
+        sx={{
+          borderRadius: "1rem",
+          background: "rgb(0,0,0,5%)",
+          marginBottom: "15px",
+          fontFamily: "'Josefin Sans', sans-serif",
+          textAlign: "left",
+        }}
+        defaultValue="none"
+      >
+        <MenuItem value="none">{props.label}</MenuItem>
+        {Array(props.items.length)
+          .fill()
+          .map((_, index) => (
+            <MenuItem value={props.items[index]} key={index}>
+              {props.items[index]}
+            </MenuItem>
+          ))}
+        {/* test */}
+        {console.log(value)}
+      </Select>
+    </FormControl>
   );
 };
 
-export const Select = (props) => {
-  return (
-    <OutlinedInput
-      id="password-field"
-      fullWidth
-      type="select"
-      value={props.value}
-      size={props.size}
-      placeholder={props.placeholder}
-      sx={{
-        borderRadius: "1rem",
-        background: "rgb(0,0,0,5%)",
-        marginBottom: "15px",
-        fontFamily: "'Josefin Sans', sans-serif",
-      }}
-    />
-  );
-};
+import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { TimePicker } from "@mui/x-date-pickers/TimePicker";
+import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
+import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
+import { MobileDatePicker } from "@mui/x-date-pickers/MobileDatePicker";
 
 export const CustomButton = (props) => {
   return (
@@ -164,6 +179,7 @@ export const CustomButton = (props) => {
         borderRadius: "1rem",
         textTransform: "none",
         fontFamily: "'Josefin Sans', sans-serif",
+        width: props.width,
       }}
       fullWidth={props.fullWidth}
       disabled={props.disabled}

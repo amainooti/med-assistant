@@ -11,29 +11,21 @@ import {
   Divider,
   Checkbox,
   useTheme,
-  FormControlLabel,
-  FormHelperText,
   CircularProgress,
   Snackbar,
-  IconButton,
-  InputAdornment,
-  FilledInput,
   Button,
   Box,
+  IconButton,
 } from "@mui/material";
+import WestRoundedIcon from "@mui/icons-material/WestRounded";
 
-import {
-  Email,
-  Input,
-  Password,
-  CustomButton,
-  SecondaryButton,
-} from "../Common/Custom";
+import { Email, Password, CustomButton } from "../Common/Custom";
 
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import Image from "next/image";
 
 const LoginForm = ({ setMobileOpen }) => {
   const [errorMessage, setErrorMessage] = React.useState();
@@ -50,6 +42,19 @@ const LoginForm = ({ setMobileOpen }) => {
           // backgroundColor: "#000",
         }}
       >
+        <IconButton
+          aria-label="Go Back"
+          size="large"
+          onClick={() => router.back()}
+          sx={{
+            top: "-170px",
+            left: "-90px",
+          }}
+        >
+          <WestRoundedIcon />
+        </IconButton>
+        <Image src="/assets/med.png" alt="" width="256" height="171" />
+
         <Formik
           initialValues={{
             email: "",
@@ -110,9 +115,6 @@ const LoginForm = ({ setMobileOpen }) => {
               >
                 {isSubmitting ? <CircularProgress /> : "Sign in"}
               </CustomButton>
-              {/* <SecondaryButton fullWidth="true" variant="contained">
-                Sign In
-              </SecondaryButton> */}
             </form>
           )}
         </Formik>
@@ -131,7 +133,6 @@ const LoginForm = ({ setMobileOpen }) => {
             <a>Forgot Password?</a>
           </Link>
         </Typography>
-
         <Divider
           sx={{
             my: 3,

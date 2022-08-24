@@ -116,8 +116,20 @@ const RegisterForm = () => {
                   Create New Account
                 </Typography>
               </Box>
-              <Email placeholder="Email" size="small" />
-              <Password placeholder="Password" size="small" />
+              <Email
+                placeholder="Email"
+                size="small"
+                handleChange
+                handleBlur
+                value={values.email}
+              />
+              <Password
+                placeholder="Password"
+                size="small"
+                value={values.password}
+                handleChange
+                handleBlur
+              />
 
               <CustomButton
                 variant="contained"

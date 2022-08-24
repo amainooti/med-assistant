@@ -6,6 +6,10 @@ const theme = responsiveFontSizes(
       secondary: {
         main: "#00a889",
       },
+      typography: {
+        fontFamily: ["Josefin Sans", "sans-serif"].join(","),
+        fontSize: 2,
+      },
     },
   })
 );

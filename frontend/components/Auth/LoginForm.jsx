@@ -29,6 +29,18 @@ const LoginForm = () => {
   const [errorMessage, setErrorMessage] = React.useState();
   const router = useRouter();
 
+  React.useEffect(() => {
+    if (window.google) {
+      google?.accounts.id.renderButton(
+        document.getElementById("signInButton"),
+        {
+          theme: "filled_blue",
+          size: "large",
+        }
+      );
+    }
+  });
+
   return (
     <>
       <Paper
@@ -159,6 +171,7 @@ const LoginForm = () => {
           >
             <BsFacebook />
           </Button>
+          <Box id="signInButton"></Box>
           <Button
             variant="outlined"
             color="primary"

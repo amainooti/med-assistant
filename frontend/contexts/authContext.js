@@ -23,12 +23,29 @@ const AuthContext = React.createContext({
 });
 
 const AuthContextProvider = ({ children }) => {
+  const [state, dispatch] = React.useReducer(reducer, initialState);
+
   React.useEffect(() => {
-    if (window.google) {
-      !state.user && google.accounts.id.prompt();
+    console.log("Calling prompt");
+    async function handleCallbackResponse(response) {
+      console.log(response);
     }
+    window.onload = function () {
+      console.log("loaded");
+      if (window.google) {
+        google.accounts.id.initialize({
+          client_id: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
+          callback: handleCallbackResponse,
+        });
+        google.accounts.id.prompt();
+      }
+    };
   }, []);
-  return <AuthContext.Provider>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider value={{ state, dispatch }}>
+      {children}
+    </AuthContext.Provider>
+  );
 };
 
 export default AuthContextProvider;

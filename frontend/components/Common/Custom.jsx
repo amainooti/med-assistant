@@ -107,13 +107,13 @@ export const Email = (props) => {
       id={props.placeholder}
       fullWidth
       type="email"
+      name="email"
       onChange={handleChange}
       value={props.value}
       size={props.size}
       placeholder={props.placeholder}
       sx={{
         borderRadius: "1rem",
-        background: "rgb(0,0,0,5%)",
         marginBottom: "15px",
         fontFamily: "'Josefin Sans', sans-serif",
       }}

@@ -2,7 +2,7 @@ import React from "react";
 import LeftBar from "../Common/LeftBar";
 import Footer from "../Footer/Footer";
 
-const MainLayout = ({ children }) => {
+export const DesktopLayout = ({ children }) => {
   return (
     <>
       <LeftBar />
@@ -11,5 +11,3 @@ const MainLayout = ({ children }) => {
     </>
   );
 };
-
-export default MainLayout;

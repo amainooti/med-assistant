@@ -5,4 +5,4 @@
 export { Footer } from "./Footer/Footer";
 export { default as RegisterForm } from "./Auth/RegisterForm";
 export { default as LeftBar } from "./Common/LeftBar";
-export { default as MainLayout } from "./Layout/MainLayout";
+export { DesktopLayout } from "./Layout/MainLayout";

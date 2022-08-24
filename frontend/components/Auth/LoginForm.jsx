@@ -2,7 +2,6 @@ import React from "react";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook, BsApple } from "react-icons/bs";
-
 import {
   Paper,
   Typography,
@@ -102,8 +101,16 @@ const LoginForm = ({ setMobileOpen }) => {
                   Login to Your Account
                 </Typography>
               </Box>
-              <Email placeholder="Email" size="small" />
-              <Password placeholder="Password" size="small" />
+              <Email
+                placeholder="Email"
+                size="small"
+                handleChange={handleChange}
+              />
+              <Password
+                placeholder="Password"
+                size="small"
+                handleChange={handleChange}
+              />
 
               <CustomButton
                 variant="contained"
@@ -184,7 +191,7 @@ const LoginForm = ({ setMobileOpen }) => {
               color: "#7D879C",
             }}
           >
-            Don't have an account?{" "}
+            Don&apos;t have an account?{" "}
           </span>
 
           <Link href="/register">

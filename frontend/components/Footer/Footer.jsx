@@ -1,5 +1,16 @@
-import React from "react";
+import { Box } from "@mui/material";
 
-export const Footer = () => {
-  return <div>Footer</div>;
+const Footer = () => {
+  return (
+    <Box
+      align="center"
+      sx={{
+        mb: "20px",
+      }}
+    >
+      &copy; {new Date().getFullYear()} AlphaDevs. All Rights Reserved.
+    </Box>
+  );
 };
+
+export default Footer;

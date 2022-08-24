@@ -1,5 +1,4 @@
 import React from "react";
-import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook, BsApple } from "react-icons/bs";
 import {
@@ -26,7 +25,7 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import Image from "next/image";
 
-const LoginForm = ({ setMobileOpen }) => {
+const LoginForm = () => {
   const [errorMessage, setErrorMessage] = React.useState();
   const router = useRouter();
 
@@ -136,7 +135,7 @@ const LoginForm = ({ setMobileOpen }) => {
             fontFamily: "'Josefin Sans', sans-serif",
           }}
         >
-          <Link href="#">
+          <Link href="/forgotpassword">
             <a>Forgot Password?</a>
           </Link>
         </Typography>

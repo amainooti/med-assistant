@@ -19,6 +19,9 @@ const userSchema = mongoose.Schema(
       type: Number,
       required: [true, "Insert a contact"],
     },
+    hospital: {
+      type: String,
+    }
   },
   {
     timestamps: true,

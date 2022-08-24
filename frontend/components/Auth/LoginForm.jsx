@@ -1,8 +1,6 @@
 import React from "react";
-import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook, BsApple } from "react-icons/bs";
-
 import {
   Paper,
   Typography,
@@ -27,9 +25,21 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import Image from "next/image";
 
-const LoginForm = ({ setMobileOpen }) => {
+const LoginForm = () => {
   const [errorMessage, setErrorMessage] = React.useState();
   const router = useRouter();
+
+  React.useEffect(() => {
+    if (window.google) {
+      google?.accounts.id.renderButton(
+        document.getElementById("signInButton"),
+        {
+          theme: "filled_blue",
+          size: "large",
+        }
+      );
+    }
+  });
 
   return (
     <>
@@ -102,8 +112,16 @@ const LoginForm = ({ setMobileOpen }) => {
                   Login to Your Account
                 </Typography>
               </Box>
-              <Email placeholder="Email" size="small" />
-              <Password placeholder="Password" size="small" />
+              <Email
+                placeholder="Email"
+                size="small"
+                handleChange={handleChange}
+              />
+              <Password
+                placeholder="Password"
+                size="small"
+                handleChange={handleChange}
+              />
 
               <CustomButton
                 variant="contained"
@@ -129,7 +147,7 @@ const LoginForm = ({ setMobileOpen }) => {
             fontFamily: "'Josefin Sans', sans-serif",
           }}
         >
-          <Link href="#">
+          <Link href="/forgotpassword">
             <a>Forgot Password?</a>
           </Link>
         </Typography>
@@ -153,6 +171,7 @@ const LoginForm = ({ setMobileOpen }) => {
           >
             <BsFacebook />
           </Button>
+          <Box id="signInButton"></Box>
           <Button
             variant="outlined"
             color="primary"
@@ -184,7 +203,7 @@ const LoginForm = ({ setMobileOpen }) => {
               color: "#7D879C",
             }}
           >
-            Don't have an account?{" "}
+            Don&apos;t have an account?{" "}
           </span>
 
           <Link href="/register">

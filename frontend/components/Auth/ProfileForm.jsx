@@ -42,7 +42,6 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 
 const ProfileForm = (props) => {
-  const [age, setAge] = React.useState("");
   const [errorMessage, setErrorMessage] = React.useState();
   const router = useRouter();
 

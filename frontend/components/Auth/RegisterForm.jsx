@@ -39,7 +39,7 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import WestRoundedIcon from "@mui/icons-material/WestRounded";
 
-const RegisterForm = ({ setMobileOpen }) => {
+const RegisterForm = () => {
   const [errorMessage, setErrorMessage] = React.useState();
   const router = useRouter();
 
@@ -116,8 +116,20 @@ const RegisterForm = ({ setMobileOpen }) => {
                   Create New Account
                 </Typography>
               </Box>
-              <Email placeholder="Email" size="small" />
-              <Password placeholder="Password" size="small" />
+              <Email
+                placeholder="Email"
+                size="small"
+                handleChange
+                handleBlur
+                value={values.email}
+              />
+              <Password
+                placeholder="Password"
+                size="small"
+                value={values.password}
+                handleChange
+                handleBlur
+              />
 
               <CustomButton
                 variant="contained"

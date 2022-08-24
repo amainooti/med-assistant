@@ -1,6 +1,8 @@
 // export all components
 
-export { Preloader } from "./Common/Preloader";
-export { Header } from "./Header/Header";
+// export { Preloader } from "./Common/Preloader";
+
 export { Footer } from "./Footer/Footer";
-export { RegisterForm } from "./Auth/RegisterForm";
+export { default as RegisterForm } from "./Auth/RegisterForm";
+export { default as LeftBar } from "./Common/LeftBar";
+export { default as MainLayout } from "./Layout/MainLayout";

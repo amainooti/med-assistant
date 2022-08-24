@@ -39,7 +39,7 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import WestRoundedIcon from "@mui/icons-material/WestRounded";
 
-const RegisterForm = ({ setMobileOpen }) => {
+const RegisterForm = () => {
   const [errorMessage, setErrorMessage] = React.useState();
   const router = useRouter();
 

@@ -3,11 +3,11 @@ const jwt = require("jsonwebtoken");
 
 const handleRegister = async (req, res, next) => {
   try {
-    const { email, telephone } = req.body;
+    const { email, telephone, hospital } = req.body;
     if (!email || !password) {
       return res
         .status(400)
-        .json({ error: "Name, email, telephone and password is required" });
+        .json({ error: "Name, email, telephone, hospital and password is required" });
     }
     if (password.length < 6) {
       return res

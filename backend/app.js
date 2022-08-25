@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 8080;
 // @db connection
 connectDB();
 
+
 // inbuilt middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -21,6 +22,6 @@ app.use("/auth", require("./routes/auth"));
 app.use(errorHandler)
 // app.use("/api/userDashboard", require("./routes/userDashBoard"))
 
-app.listen(PORT, () => {
+app.listen(PORT, (req, res, next) => {
   console.log(colors.bold(`Listening on port http://localhost:${PORT}`));
 });

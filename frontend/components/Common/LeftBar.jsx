@@ -1,5 +1,5 @@
 import React from "react";
-import { styled, useTheme } from "@mui/material/styles";
+import { useTheme } from "@mui/material/styles";
 
 import {
   Box,
@@ -10,7 +10,24 @@ import {
   IconButton,
   Drawer,
   AppBar,
+  styled,
+  InputBase,
+  Stack,
+  alpha,
 } from "@mui/material";
+
+import {
+  PersonOutline,
+  ShoppingBagOutlined,
+  Brightness7,
+  Brightness4,
+  Mail,
+  CallOutlined,
+  Search,
+  GridViewOutlined,
+  PersonOutlined,
+  FavoriteBorderRounded,
+} from "@mui/icons-material";
 
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
@@ -21,6 +38,34 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
+
+const SearchComp = styled("div")(({ theme }) => ({
+  position: "relative",
+  borderRadius: "4px",
+  backgroundColor: alpha(theme.palette.primary.main, 0.15),
+  width: "100%",
+  maxWidth: "700px",
+  border: `2px solid white`,
+}));
+
+const SearchIconWrapper = styled("div")(({ theme }) => ({
+  padding: theme.spacing(0, 2),
+  height: "100%",
+  position: "absolute",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+}));
+
+const StyledInputBase = styled(InputBase)(({ theme }) => ({
+  color: "inherit",
+  "& .MuiInputBase-input": {
+    padding: theme.spacing(1, 1, 1, 0),
+    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+    // width: "100%",
+    // maxWidth: "1000px",
+  },
+}));
 
 const drawerWidth = 240;
 
@@ -89,7 +134,7 @@ const LeftDrawer = styled(Drawer, {
   }),
 }));
 
-const LeftBar = () => {
+const LeftBar = ({ children }) => {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -102,8 +147,8 @@ const LeftBar = () => {
   };
 
   return (
-    <Box sx={{ display: "flex" }}>
-      <LeftAppBar position="fixed" open={open}>
+    <Box sx={{ display: "flex" }} color="secondary">
+      <LeftAppBar position="fixed" open={open} color="secondary">
         <Toolbar>
           <IconButton
             color="inherit"
@@ -117,6 +162,7 @@ const LeftBar = () => {
           >
             <MenuIcon />
           </IconButton>
+
           <Typography
             variant="h6"
             noWrap
@@ -125,8 +171,27 @@ const LeftBar = () => {
               fontFamily: "'Josefin Sans', sans-serif",
             }}
           >
-            Med-X Dashboard
+            Med-X
           </Typography>
+          <Box sx={{ flexGrow: { lg: 1, xs: 0 } }} />
+
+          <SearchComp width="100%">
+            <SearchIconWrapper>
+              <Search />
+            </SearchIconWrapper>
+            <StyledInputBase
+              placeholder="Searching for..."
+              inputProps={{ "aria-label": "search" }}
+              sx={{
+                width: "100%",
+              }}
+            />
+          </SearchComp>
+          <Box sx={{ flexGrow: { lg: 1 } }} />
+
+          <Stack spacing={2} direction="row">
+            profile stuff
+          </Stack>
         </Toolbar>
       </LeftAppBar>
       <LeftDrawer variant="permanent" open={open}>
@@ -190,6 +255,10 @@ const LeftBar = () => {
           ))}
         </List>
       </LeftDrawer>
+      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+        <DrawerHeader />
+        {children}
+      </Box>
     </Box>
   );
 };

@@ -163,11 +163,19 @@ export const ResetPassword = () => {
             isSubmitting,
           }) => (
             <form noValidate onSubmit={handleSubmit}>
-              <Password size="small" placeholder="Enter New Password " />
-              <Password size="small" placeholder="Confirm New Password " />
+              <Password
+                size="small"
+                placeholder="Enter New Password"
+                color="secondary"
+              />
+              <Password
+                size="small"
+                placeholder="Confirm New Password"
+                color="secondary"
+              />
               <CustomButton
                 variant="contained"
-                color="primary"
+                color="secondary"
                 type="submit"
                 fullWidth
                 disabled={isSubmitting}

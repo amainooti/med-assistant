@@ -125,7 +125,7 @@ const LoginForm = () => {
 
               <CustomButton
                 variant="contained"
-                color="primary"
+                color="secondary"
                 type="submit"
                 fullWidth
                 disabled={isSubmitting}
@@ -137,8 +137,7 @@ const LoginForm = () => {
           )}
         </Formik>
         <Typography
-          variant="h6"
-          color="primary"
+          color="secondary"
           sx={{
             textAlign: "center",
             fontWeight: "bold",
@@ -166,7 +165,7 @@ const LoginForm = () => {
         >
           <Button
             variant="outlined"
-            color="primary"
+            color="secondary"
             sx={{ textTransform: "none" }}
           >
             <BsFacebook />
@@ -174,22 +173,21 @@ const LoginForm = () => {
           <Box id="signInButton"></Box>
           <Button
             variant="outlined"
-            color="primary"
+            color="secondary"
             sx={{ textTransform: "none" }}
           >
             <FcGoogle />
           </Button>
           <Button
             variant="outlined"
-            color="primary"
+            color="secondary"
             sx={{ textTransform: "none" }}
           >
             <BsApple />
           </Button>
         </Stack>
         <Typography
-          variant="h6"
-          color="primary"
+          color="secondary"
           sx={{
             textAlign: "center",
             fontWeight: "bold",

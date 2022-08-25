@@ -30,6 +30,7 @@ export const Input = (props) => {
     <OutlinedInput
       id={props.placeholder}
       fullWidth
+      color={props.color}
       type="text"
       onChange={handleChange}
       value={props.value}
@@ -68,6 +69,7 @@ export const Password = (props) => {
   return (
     <OutlinedInput
       id={props.placeholder}
+      color={props.color}
       fullWidth
       type={values.showPassword ? "text" : "password"}
       value={props.value}
@@ -87,7 +89,7 @@ export const Password = (props) => {
       }
       endAdornment={
         <InputAdornment position="end">
-          <IconButton edge="end" size="small">
+          <IconButton edge="end" size="small" onClick={handleClickShowPassword}>
             {values.showPassword ? <VisibilityOff /> : <Visibility />}
           </IconButton>
         </InputAdornment>
@@ -112,10 +114,12 @@ export const Email = (props) => {
       value={props.value}
       size={props.size}
       placeholder={props.placeholder}
+      color={props.color}
       sx={{
         borderRadius: "1rem",
         marginBottom: "15px",
         fontFamily: "'Josefin Sans', sans-serif",
+        background: "rgb(0,0,0,5%)",
       }}
       startAdornment={
         <InputAdornment position="start">
@@ -139,6 +143,7 @@ export const CustomSelect = (props) => {
         value={props.value}
         onChange={handleChange}
         size={props.size}
+        color={props.color}
         sx={{
           borderRadius: "1rem",
           background: "rgb(0,0,0,5%)",
@@ -172,10 +177,12 @@ export const CustomButton = (props) => {
         borderRadius: "1rem",
         textTransform: "none",
         fontFamily: "'Josefin Sans', sans-serif",
+
         width: props.width,
       }}
       fullWidth={props.fullWidth}
       disabled={props.disabled}
+      color={props.color}
     >
       {props.children}
     </Button>

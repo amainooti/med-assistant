@@ -118,6 +118,7 @@ const RegisterForm = () => {
               </Box>
               <Email
                 placeholder="Email"
+                color="secondary"
                 size="small"
                 handleChange
                 handleBlur
@@ -125,6 +126,7 @@ const RegisterForm = () => {
               />
               <Password
                 placeholder="Password"
+                color="secondary"
                 size="small"
                 value={values.password}
                 handleChange
@@ -133,7 +135,7 @@ const RegisterForm = () => {
 
               <CustomButton
                 variant="contained"
-                color="primary"
+                color="secondary"
                 type="submit"
                 fullWidth
                 disabled={isSubmitting}
@@ -145,8 +147,7 @@ const RegisterForm = () => {
           )}
         </Formik>
         <Typography
-          variant="h6"
-          color="primary"
+          color="secondary"
           sx={{
             textAlign: "center",
             fontWeight: "bold",
@@ -175,29 +176,28 @@ const RegisterForm = () => {
         >
           <Button
             variant="outlined"
-            color="primary"
+            color="secondary"
             sx={{ textTransform: "none" }}
           >
             <BsFacebook />
           </Button>
           <Button
             variant="outlined"
-            color="primary"
+            color="secondary"
             sx={{ textTransform: "none" }}
           >
             <FcGoogle />
           </Button>
           <Button
             variant="outlined"
-            color="primary"
+            color="secondary"
             sx={{ textTransform: "none" }}
           >
             <BsApple />
           </Button>
         </Stack>
         <Typography
-          variant="h6"
-          color="primary"
+          color="secondary"
           sx={{
             textAlign: "center",
             fontWeight: "bold",

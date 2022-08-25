@@ -5,8 +5,7 @@ import Footer from "../Footer/Footer";
 export const DesktopLayout = ({ children }) => {
   return (
     <>
-      <LeftBar />
-      {children}
+      <LeftBar>{children}</LeftBar>
       <Footer />
     </>
   );

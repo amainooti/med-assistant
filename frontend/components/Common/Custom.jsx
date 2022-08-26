@@ -177,7 +177,6 @@ export const CustomButton = (props) => {
         borderRadius: "1rem",
         textTransform: "none",
         fontFamily: "'Josefin Sans', sans-serif",
-
         width: props.width,
       }}
       fullWidth={props.fullWidth}
@@ -195,8 +194,9 @@ export const SecondaryButton = (props) => {
       variant={props.variant}
       size={props.size}
       disableElevation
+      onClick={props.onClick}
       sx={{
-        color: "#00a889",
+        color: props.textColor ? props.textColor : "#00a889",
         fontWeight: "bold",
         background: "rgb(0,0,0,5%)",
         borderRadius: "1rem",

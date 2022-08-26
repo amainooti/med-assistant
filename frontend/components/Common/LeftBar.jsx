@@ -14,20 +14,14 @@ import {
   InputBase,
   Stack,
   alpha,
+  Tooltip,
+  Button,
+  Avatar,
+  Paper,
+  ClickAwayListener,
 } from "@mui/material";
 
-import {
-  PersonOutline,
-  ShoppingBagOutlined,
-  Brightness7,
-  Brightness4,
-  Mail,
-  CallOutlined,
-  Search,
-  GridViewOutlined,
-  PersonOutlined,
-  FavoriteBorderRounded,
-} from "@mui/icons-material";
+import { Search, FavoriteBorderRounded } from "@mui/icons-material";
 
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
@@ -38,6 +32,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
+import { SecondaryButton, CustomButton } from "./Custom";
 
 const SearchComp = styled("div")(({ theme }) => ({
   position: "relative",
@@ -137,6 +132,7 @@ const LeftDrawer = styled(Drawer, {
 const LeftBar = ({ children }) => {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
+  const [showProfile, setShowProfile] = React.useState(false);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -190,7 +186,21 @@ const LeftBar = ({ children }) => {
           <Box sx={{ flexGrow: { lg: 1 } }} />
 
           <Stack spacing={2} direction="row">
-            profile stuff
+            <Tooltip title="Profile" arrow>
+              <>
+                <SecondaryButton
+                  textColor="inherit"
+                  onClick={() => setShowProfile((prev) => !prev)}
+                >
+                  <Avatar
+                    sx={{
+                      marginRight: "5px",
+                    }}
+                  />
+                  Hi, User
+                </SecondaryButton>
+              </>
+            </Tooltip>
           </Stack>
         </Toolbar>
       </LeftAppBar>
@@ -257,6 +267,8 @@ const LeftBar = ({ children }) => {
       </LeftDrawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
+        {showProfile && <Profile />}
+
         {children}
       </Box>
     </Box>
@@ -264,3 +276,49 @@ const LeftBar = ({ children }) => {
 };
 
 export default LeftBar;
+
+const Profile = () => {
+  return (
+    <Paper
+      sx={{
+        position: "absolute",
+        maxWidth: "350px",
+        right: "20px",
+        top: "70px",
+      }}
+      elevation={2}
+    >
+      <Box p={3}>
+        <Box mb={3}>
+          <Box display="flex" gap={2.5} mb={1}>
+            <Avatar alt="User" src="" sx={{ width: 100, height: 100 }} />
+            <Box mt={2} display="flex" flexDirection="column">
+              <Typography
+                variant="paragraph"
+                sx={{
+                  fontWeight: "bold",
+                }}
+              >
+                User Name
+              </Typography>
+              <Typography variant="paragraph" color="GrayText">
+                (User/Doctor)
+              </Typography>
+              <Typography variant="paragraph" color="GrayText">
+                email@med-x.com
+              </Typography>
+            </Box>
+          </Box>
+          {/* // profile menu */}
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet ea est
+          molestiae commodi nisi officia cupiditate delectus sint voluptate aut
+          cumque reiciendis rerum magni eos ducimus enim perspiciatis, ut
+          repellat!
+        </Box>
+        <CustomButton color="secondary" variant="contained" fullWidth={true}>
+          Logout
+        </CustomButton>
+      </Box>
+    </Paper>
+  );
+};

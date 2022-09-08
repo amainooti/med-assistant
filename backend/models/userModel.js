@@ -21,8 +21,10 @@ const userSchema = mongoose.Schema(
     },
     hospital: {
       type: String,
-    }
+    },
+    profile: String,
   },
+
   {
     timestamps: true,
   }
